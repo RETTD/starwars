@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <!-- <router-link> -->
-    <router-view/>
+      <router-view
+    />
   </div>
 </template>
-<script>
-</script>
+<script></script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

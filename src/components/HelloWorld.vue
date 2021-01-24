@@ -6,11 +6,19 @@
           src="https://wallpaperaccess.com/full/496936.jpg"
           contain
           height="250"
-        ></v-img
-      ></v-col>
+        ></v-img>
+        <div>Wyszukiwarka postaci STAR WARS</div></v-col
+      >
+
       <v-col>
         <v-text-field label="Wpisz imię postaci" v-model="name"></v-text-field>
-        <v-btn text class="mx-0 mt-3" @click="getName">Szukaj</v-btn>
+        <v-btn
+          style="background-color: lightblue"
+          text
+          class="mx-0 mt-3"
+          @click="getName"
+          >Szukaj</v-btn
+        >
       </v-col>
       <v-col>
         <v-list>
@@ -18,14 +26,9 @@
             <v-list-item
               v-for="people in people"
               :key="people"
-              @click="getDataOfPerson"
+              @click="getDataOfPerson(people)"
             >
-              <v-list-item-content
-                >{{ people.name
-                }}
-                <!-- <router-link :to="{ name: 'Person' }"></router-link> -->
-                <!-- <router-view/> -->
-              </v-list-item-content>
+              <v-list-item-content>{{ people.name }} </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
         </v-list>
@@ -51,7 +54,6 @@ export default {
       people: {},
       nextPage: {},
       previousPage: {},
-      // routes: router.push(path:)
     };
   },
   mounted() {
@@ -95,9 +97,16 @@ export default {
         );
       });
     },
-    getDataOfPerson() {
-      this.$router.push({ name: "Person"  });
+    getDataOfPerson(people) {
+      console.log("URL", people.url);
+      this.$router.push({ name: "Person", params: { url: people.url } });
     },
   },
 };
 </script>
+<style>
+.row {
+  display: flex;
+  flex-direction: column;
+}
+</style>
