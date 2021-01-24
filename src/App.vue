@@ -1,16 +1,10 @@
 <template>
   <div id="app">
-    <HelloWorld msg="STARAWARS API" />
+    <!-- <router-link> -->
+    <router-view/>
   </div>
 </template>
 <script>
-import HelloWorld from "./components/HelloWorld";
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
 </script>
 <style>
 #app {

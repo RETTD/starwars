@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import HelloWorld from '../components/HelloWorld'
+import Person from './/Person'
 
 Vue.use(VueRouter)
 
@@ -8,7 +9,12 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: HelloWorld
+  },
+  {
+    path:'/person',
+    name: 'Person',
+    component: Person
   },
   {
     path: '/about',
