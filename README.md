@@ -1,4 +1,6 @@
 # starwars
+Search engine for character from STARWARS on SWAPI
+Use Vue with axios 
 
 ## Project setup
 ```

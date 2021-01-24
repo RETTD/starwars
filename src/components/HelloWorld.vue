@@ -44,7 +44,6 @@
 <script>
 import axios from "axios";
 import { swapiModule } from "../api/swapi";
-// import VueRouter from 'vue-router'
 export default {
   name: "myStore",
   data() {
@@ -58,7 +57,6 @@ export default {
   },
   mounted() {
     swapiModule.getPeople({}, (data) => {
-      console.log("All results that match", data);
       return (
         (this.people = data.results),
         (this.nextPage = data.next),
@@ -78,7 +76,6 @@ export default {
     },
     getNextData() {
       axios.get(this.nextPage).then((data) => {
-        console.log("next", data);
 
         return (
           (this.people = data.data.results),
@@ -89,7 +86,6 @@ export default {
     },
     getPreviousData() {
       axios.get(this.previousPage).then((data) => {
-        console.log("previous", data);
         return (
           (this.people = data.data.results),
           (this.previousPage = data.data.previous),
@@ -98,7 +94,6 @@ export default {
       });
     },
     getDataOfPerson(people) {
-      console.log("URL", people.url);
       this.$router.push({ name: "Person", params: { url: people.url } });
     },
   },
