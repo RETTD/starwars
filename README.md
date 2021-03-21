@@ -2,6 +2,8 @@
 Search engine for character from STARWARS on SWAPI
 Use Vue with axios 
 
+Create in 2 hours
+
 ## Project setup
 ```
 npm install
